@@ -10,7 +10,8 @@ inputs:
     default: "us-1"
   FILES:
     description: "List of files to scan, space separated. If not provided, all files in the repository will be scanned."
-    required: false
+    required: true
+    default: ""
 branding:
   icon: "package"
   color: "red"
