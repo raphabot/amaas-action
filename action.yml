@@ -24,4 +24,4 @@ runs:
     - --region
     - ${{ inputs.REGION }}
     - -f
-    - $([ -z ${{ inputs.FILES }} ] && find . -type f -not -path "./.git/*" | tr '\n' ' ' || echo ${{ inputs.FILES }})
+    - $([ -z "$INPUT_FILES" ] && find . -type f -not -path "./.git/*" | tr '\n' ' ' || echo "$INPUT_FILES")
