@@ -1,0 +1,17 @@
+name: On PR
+
+run-name: On PR
+
+on: [pull_request, workflow_dispatch]
+
+jobs:
+  scan-repository-for-malware:
+    name: Scan Repository for Malware
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        uses: raphabot/amaas-action@main
+        with:
+            CLOUD_ONE_US1_API_KEY: ${{ secrets.CLOUD_ONE_US1_API_KEY }}
+            REGION: us-1
+            FILES: Dockerfile
