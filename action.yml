@@ -18,6 +18,9 @@ runs:
   using: "docker"
   image: "docker://ghcr.io/raphabot/amaas:latest"
   args:
-    - --api_key ${{ inputs.CLOUD_ONE_API_KEY }}
-    - --region ${{ inputs.REGION }}
-    - -f ${{ inputs.FILES }}
+    - --api_key
+    - ${{ inputs.CLOUD_ONE_API_KEY }}
+    - --region
+    - ${{ inputs.REGION }}
+    - -f
+    - ${{ inputs.FILES }}
