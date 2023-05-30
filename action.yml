@@ -1,0 +1,23 @@
+name: "Trend Anti-Malware Scan Service Action"
+description: "Scan files looking for malware using Trend Anti-Malware Scan Service"
+inputs:
+  CLOUD_ONE_API_KEY:
+    description: "Cloud One API Key"
+    required: true
+  REGION:
+    description: "Cloud One Region"
+    required: true
+    default: "us-1"
+  FILES:
+    description: "What files to scan"
+    required: true
+branding:
+  icon: "package"
+  color: "red"
+runs:
+  using: "docker"
+  image: "docker://ghcr.io/raphabot/amaas:latest"
+  args:
+    - --api_key ${{ inputs.CLOUD_ONE_API_KEY }}
+    - --region ${{ inputs.REGION }}
+    - -f ${{ inputs.FILES }}
