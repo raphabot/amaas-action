@@ -10,8 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - 
+        uses: actions/checkout@v3
+      - 
         uses: raphabot/amaas-action@main
         with:
-            CLOUD_ONE_US1_API_KEY: ${{ secrets.CLOUD_ONE_US1_API_KEY }}
-            REGION: us-1
-            FILES: Dockerfile
+          CLOUD_ONE_US1_API_KEY: ${{ secrets.CLOUD_ONE_US1_API_KEY }}
+          REGION: us-1
+          FILES: Dockerfile
