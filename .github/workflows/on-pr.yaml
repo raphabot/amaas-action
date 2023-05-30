@@ -16,4 +16,4 @@ jobs:
         with:
           CLOUD_ONE_API_KEY: ${{ secrets.CLOUD_ONE_US1_API_KEY }}
           REGION: us-1
-          
+          FILES: ""
