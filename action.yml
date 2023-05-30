@@ -9,8 +9,8 @@ inputs:
     required: true
     default: "us-1"
   FILES:
-    description: "What files to scan"
-    required: true
+    description: "List of files to scan, space separated. If not provided, all files in the repository will be scanned."
+    required: false
 branding:
   icon: "package"
   color: "red"
@@ -23,4 +23,4 @@ runs:
     - --region
     - ${{ inputs.REGION }}
     - -f
-    - ${{ inputs.FILES }}
+    - $([ -z ${{ inputs.FILES }} ] && find . -type f -not -path "./.git/*" | tr '\n' ' ' || echo ${{ inputs.FILES }})

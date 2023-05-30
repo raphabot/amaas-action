@@ -59,6 +59,10 @@ Artifacts allow you to share data between jobs in a workflow and store data once
 
 -->
 
+## Limitations
+
+It currently doesn't support filenames that contains `" "` (blank space).
+
 ## Contributing
 
 If you encounter a bug, think of a useful feature, or find something confusing
