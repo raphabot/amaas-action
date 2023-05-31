@@ -12,8 +12,12 @@ inputs:
     description: "List of files to scan, space separated. If not provided, all files in the repository will be scanned."
     required: true
     default: ""
+  EXCLUSION:
+    description: "File or folder to exclude. If not provided, '.git' folder will be excluded."
+  HASH:
+    description: "Boolean to decide if the hash of the file should be generated and returned. Defaults to false."
 branding:
-  icon: "package"
+  icon: "shield"
   color: "red"
 runs:
   using: "docker"
@@ -23,5 +27,6 @@ runs:
     - ${{ inputs.CLOUD_ONE_API_KEY }}
     - --region
     - ${{ inputs.REGION }}
-    - -f
-    - $([ -z "$INPUT_FILES" ] && find . -type f -not -path "./.git/*" | tr '\n' ' ' || echo "$INPUT_FILES")
+    - $([ -z "$INPUT_FILES" ] && echo "" || echo "-f $INPUT_FILES")
+    - $([ -z "$INPUT_EXCLUSION" ] && echo "" || echo "-exclude $INPUT_EXCLUSION")
+    - $([ -z "$INPUT_HASH" ] && echo "" || echo "--hash")

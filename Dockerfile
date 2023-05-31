@@ -2,8 +2,8 @@ FROM python
 
 WORKDIR /app/
 
-COPY am-scanner.py /app/
-
 RUN python3 -m pip install cloudone-vsapi
 
-ENTRYPOINT [ "python3", "am-scanner.py" ]
+COPY scanner.py /app/
+
+ENTRYPOINT [ "python3", "scanner.py" ]
