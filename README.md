@@ -9,7 +9,7 @@ This tool is meant to be used as a [GitHub Action](https://github.com/features/a
 ## Requirements
 
 * Have an [Cloud One Account](https://cloudone.trendmicro.com). [Sign up for free trial now](https://cloudone.trendmicro.com/trial) if it's not already the case!
-* [A Cloud One API Key](https://cloudone.trendmicro.com/docs/identity-and-account-management/c1-api-key/#new-api-key) with `Full Access` role
+* [A Cloud One API Key](https://cloudone.trendmicro.com/docs/identity-and-account-management/c1-api-key/#new-api-key) with `Read-Only` role
 * A [Cloud One Region](https://cloudone.trendmicro.com/docs/identity-and-account-management/c1-regions/) of choice
 * Files to scan.
 
